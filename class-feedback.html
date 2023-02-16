@@ -7,7 +7,11 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+      <!--Data visualization - Recharts-->
+      <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+      <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+      <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+      <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
 
    </head>
    <body>
@@ -49,9 +53,40 @@
             </nav>
             <!-- Starbackground -->
             <div id='stars'></div>
-
-            <h2>Tell us about your experience with your CSS/AC classes!</h2>
+            <!-- Using DOM for verification with javascript -->
+            <script> 
+               function Validate(){
+              var txt = document.getElementById('txtUWEmail');
+              //Preventing user from leaving the email address box empty
+              if(txt.value === "" || txt.value === null){
+               alert('UW email is required');
+              }
+            }
+            </script>
+            <h5>Tell us about your experience with your CSS/AC classes!</h5>
+            <form>
+               <h5>Feedback form</h5>
+               UW email: <input type="text" id="txtUWEmail"/><br/>
+               Name: <input type="password"> <br/>
+               <p>Please select your age:</p>
+               <input type="radio" id="age1" name="age" value="30">
+               <label for="age1">Freshman</label><br>
+               <input type="radio" id="age2" name="age" value="60">
+               <label for="age2">Sophomore</label><br>  
+               <input type="radio" id="age3" name="age" value="100">
+               <label for="age3">Junior</label><br><br>
+               <input type="radio" id="age3" name="age" value="100">
+               <label for="age3">Senior</label><br><br>
+            </br>
+            <input type="submit" class="button" value ="Submit" onclick="Validate()">
+            </form>
       </html>
+
+      <PieChart width={730} height={250}>
+         <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
+         <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
+       </PieChart>
+       
       <!-- partial -->
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js'></script>
