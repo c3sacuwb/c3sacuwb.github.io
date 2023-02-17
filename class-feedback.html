@@ -7,11 +7,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <!--Data visualization - Recharts-->
-      <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
-      <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
-      <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
-      <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
+
 
    </head>
    <body>
@@ -64,29 +60,122 @@
             }
             </script>
             <h5>Tell us about your experience with your CSS/AC classes!</h5>
-            <form>
-               <h5>Feedback form</h5>
-               UW email: <input type="text" id="txtUWEmail"/><br/>
-               Name: <input type="password"> <br/>
-               <p>Please select your age:</p>
-               <input type="radio" id="age1" name="age" value="30">
-               <label for="age1">Freshman</label><br>
-               <input type="radio" id="age2" name="age" value="60">
-               <label for="age2">Sophomore</label><br>  
-               <input type="radio" id="age3" name="age" value="100">
-               <label for="age3">Junior</label><br><br>
-               <input type="radio" id="age3" name="age" value="100">
-               <label for="age3">Senior</label><br><br>
-            </br>
-            <input type="submit" class="button" value ="Submit" onclick="Validate()">
-            </form>
+            
       </html>
+<!--FEEDBACK FORM-->
+<form id="survey-form">
+   <h4 for="inputName">Name:</h4>
+   <input
+     id="inputName"
+     type="text"
+     name="name"
+     placeholder="Joe Bloggs"
+     required
+   />
 
-      <PieChart width={730} height={250}>
-         <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
-         <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
-       </PieChart>
-       
+   <h4 for="inputEmail">UW Email:</h4>
+   <input
+     id="inputEmail"
+     type="email"
+     name="email"
+     placeholder="joe.bloggs@gmail.com"
+     required
+   />
+
+   <h4 for="inputAge">Graduation date</h4>
+   <input
+     id="inputAge"
+     name="age"
+     type="number"
+     placeholder="2025"
+     max="4"
+     required
+   />
+
+   <h4 for="textComment"
+     >Which option best describes your current role?</h4
+   >
+   <select id="selectRole" name="role" required>
+     <option disabled selected value>Select current major</option>
+     <option value="student">Computer Science & Software Engineering</option>
+     <option value="full-time-job">Computer Engineering</option>
+     <option value="full-time-learner">Applied Computing</option>
+     <option value="other">Other</option>
+   </select>
+
+   <fieldset name="langs">
+     <h4>What languages are you interested in?</h4>
+     <div>
+       <input type="checkbox" name="langs" id="checkHTML" value="html" />
+       <label for="checkHTML">HTML</label>
+
+       <input type="checkbox" name="langs" id="checkCSS" value="css" />
+       <label for="checkCSS">CSS</label>
+
+       <input type="checkbox" name="langs" id="checkJS" value="js" />
+       <label for="checkJS">JavaScript</label>
+
+       <input type="checkbox" name="langs" id="checkPy" value="py" />
+       <label for="checkPy">Python</label>
+
+       <input type="checkbox" name="langs" id="checkPHP" value="php" />
+       <label for="checkPHP">PHP</label>
+
+       <input type="checkbox" name="langs" id="checkGo" value="go" />
+       <label for="checkGo">Go</label>
+
+       <input type="checkbox" name="langs" id="checkJava" value="java" />
+       <label for="checkJava">Java</label>
+
+       <input type="checkbox" name="langs" id="checkRuby" value="ruby" />
+       <label for="checkruby">Ruby</label>
+
+       <input type="checkbox" name="langs" id="checkKotlin" value="kotlin" />
+       <label for="checkKotlin">Kotlin</label>
+
+       <input type="checkbox" name="langs" id="checkRust" value="rust" />
+       <label for="checkRust">Rust</label>
+
+       <input type="checkbox" name="langs" id="checkCSharp" value="csharp" />
+       <label for="checkCSharp">C#</label>
+
+       <input type="checkbox" name="langs" id="checkCPlus" value="cplus" />
+       <label for="checkCPlus">C++</label>
+     </div>
+   </fieldset>
+
+   <fieldset name="recommend">
+     <h4 for="textComment">Are you interested in providing feedback for Computer Science classes?</h4>
+
+     <div>
+       <input id="rdoDef" type="radio" name="recommend" value="definitely" />
+       <label for="rdoDef">Definitely</label>
+
+       <input id="rdoMaybe" type="radio" name="recommend" value="maybe" />
+       <label for="rdoMaybe">Maybe</label>
+
+       <input
+         id="rdoNS"
+         type="radio"
+         name="recommend"
+         value="not-sure"
+         required
+       />
+       <label for="rdoNS">Not sure</label>
+     </div>
+   </fieldset>
+
+   <h4 for="textComment">Any comments or suggestions?</h4>
+   <textarea
+     id="textComment"
+     name="comments"
+     placeholder="Please enter your comment here..."
+   ></textarea>
+   <button>Submit</button>
+ </form>
+
+
+   
       <!-- partial -->
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js'></script>
