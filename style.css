@@ -6,6 +6,8 @@
     padding:0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+
 }
 
 .hero{
@@ -70,32 +72,6 @@ body {
             transform: translate3d(-50%, -50%, 0);
   }
 
-  form{
-    background-color: #312c42;
-    color: #FFF;
-    margin: 5%;
-    padding: 1ch;
-
-  }
-
-  input{
-    background-color: #d7d9db;
-    border-radius:5px;
-    margin: 1%;
-    border: none;
-  }
-  .button {
-    background-color: #10455a;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
 
   h5{
     color: white;
@@ -105,6 +81,133 @@ body {
     letter-spacing: 0.2em;
     position: left;
   }
+  /**FEEDBACK FORM*/
+
+  
+#survey-form {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5em;
+
+  width: min(40em, 70vw);
+  padding: 25px;
+  border-radius: 1.5em;
+  margin: 0 auto;
+
+  color: rgb(0, 0, 0);
+  background-color:rgb(132, 134, 134);
+
+}
+
+#survey-form > label {
+  padding-left: 0.5em;
+
+  text-align: left;
+  font-size: 1.2em;
+}
+
+#survey-form > * + :is(label, fieldset, button) {
+  margin-top: 0.5em;
+}
+
+#survey-form :where(input, select, textarea) {
+  padding: 0.5rem 1rem;
+  border: 3px var(--dark-purple) solid;
+  border-radius: 0.5em;
+
+  font-size: 1.1em;
+}
+
+#survey-form :where(input, select, textarea):focus {
+  border-color: var(--light-purple);
+  outline: none;
+}
+
+#survey-form input[name="age"] {
+  width: 4em;
+}
+
+input {
+}
+
+/* Disable number input arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  text-align: right;
+}
+
+select :first-child {
+  /* Hiding the placeholder */
+  display: none;
+}
+
+fieldset legend {
+  text-align: left;
+}
+
+fieldset input {
+  margin: 0;
+}
+
+fieldset[name="langs"] div {
+  display: grid;
+  grid-template-columns: repeat(4, auto 1fr);
+  gap: 0.5em;
+  align-items: center;
+}
+
+fieldset[name="langs"] label {
+  text-align: left;
+}
+
+fieldset[name="recommend"] div {
+  display: flex;
+  align-items: center;
+  padding-inline: 1em;
+}
+
+fieldset[name="recommend"] label {
+  margin-left: 0.5em;
+  text-transform: capitalize;
+}
+
+fieldset input:not(:first-child) {
+  margin-left: auto;
+}
+
+textarea {
+  resize: none;
+  overflow-y: auto;
+}
+
+#survey-form button {
+  align-self: flex-end;
+
+  width: max-content;
+  padding: 0.6em 1em;
+  border: none;
+  border-radius: 0.5em;
+  box-shadow: 0 0 2px 1px rgba(134, 113, 255, 0.133);
+
+  font-size: 1.2em;
+  background-color: rgb(32, 32, 22);
+  color: rgb(255, 243, 243);
+
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+#survey-form button:hover {
+  box-shadow: 0 0 4px 2px #0003;
+  transform: scale(1.1);
+}
+
 
   /**KEYFRAMES - MOVEMENT**/
   @-webkit-keyframes rotate {
@@ -132,7 +235,7 @@ body {
   html {
     height: 1000px;
     background: radial-gradient(ellipse at bottom, #04094f 0%, #090a0f 100%);
-    overflow: hidden;
+    overflow: scroll;
   }
   /*************************STARS*******************************************/
   #stars {
