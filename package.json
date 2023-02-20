@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-db-google-sheets": "^2.1.1"
+  }
+}

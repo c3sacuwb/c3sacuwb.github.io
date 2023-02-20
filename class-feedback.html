@@ -93,15 +93,52 @@
    />
 
    <h4 for="textComment"
-     >Which option best describes your current role?</h4
+     >To which class would you like to provide feedback?</h4
    >
    <select id="selectRole" name="role" required>
-     <option disabled selected value>Select current major</option>
-     <option value="student">Computer Science & Software Engineering</option>
-     <option value="full-time-job">Computer Engineering</option>
-     <option value="full-time-learner">Applied Computing</option>
-     <option value="other">Other</option>
+     <option disabled selected value>CSS342</option>
+     <option value="student">CSS343</option>
+     <option value="full-time-job">CSS360</option>
+     <option value="full-time-learner">CSS422</option>
+     <option value="other">CSS449</option>
    </select>
+
+   <h4 for="inputEmail">Instructor name:</h4>
+   <input
+     id="inputProf"
+     type="prof-name"
+     name="prof-name"
+     placeholder="Minehiro Fukuda"
+     required
+   />
+
+   <h4 for="textComment">Share your thoughts about the class</h4>
+   <textarea
+     id="textComment"
+     name="comments"
+     placeholder="Please enter your comment here..."
+   ></textarea>
+
+   <fieldset name="recommend">
+      <h4 for="textComment">Are you interested in participating in CS introductory workshops? <h6>Workshops that can help you be prepared for CSS classes: Linux, C++, Assembly, etc...?</h6></h4>
+ 
+      <div>
+        <input id="rdoDef" type="radio" name="recommend" value="definitely" />
+        <label for="rdoDef">Definitely</label>
+ 
+        <input id="rdoMaybe" type="radio" name="recommend" value="maybe" />
+        <label for="rdoMaybe">Maybe</label>
+ 
+        <input
+          id="rdoNS"
+          type="radio"
+          name="recommend"
+          value="not-sure"
+          required
+        />
+        <label for="rdoNS">Not sure</label>
+      </div>
+    </fieldset>
 
    <fieldset name="langs">
      <h4>What languages are you interested in?</h4>
@@ -143,35 +180,8 @@
        <label for="checkCPlus">C++</label>
      </div>
    </fieldset>
-
-   <fieldset name="recommend">
-     <h4 for="textComment">Are you interested in participating in CS introductory workshops? <h6>Workshops that can help you be prepared for CSS classes: Linux, C++, Assembly, etc...?</h6></h4>
-
-     <div>
-       <input id="rdoDef" type="radio" name="recommend" value="definitely" />
-       <label for="rdoDef">Definitely</label>
-
-       <input id="rdoMaybe" type="radio" name="recommend" value="maybe" />
-       <label for="rdoMaybe">Maybe</label>
-
-       <input
-         id="rdoNS"
-         type="radio"
-         name="recommend"
-         value="not-sure"
-         required
-       />
-       <label for="rdoNS">Not sure</label>
-     </div>
-   </fieldset>
-
-   <h4 for="textComment">Any comments or suggestions?</h4>
-   <textarea
-     id="textComment"
-     name="comments"
-     placeholder="Please enter your comment here..."
-   ></textarea>
    <button>Submit</button>
+
  </form>
 
 
