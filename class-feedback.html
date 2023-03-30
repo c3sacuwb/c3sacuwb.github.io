@@ -3,6 +3,138 @@
   <head>
     <meta charset="UTF-8">
     <title>Computing Careers Club website</title>
+          <!--NAVBAR-->
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Computing Careers Club</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="projects.html">Projects</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="class-feedback.html">Class Feedback</a></li>
+                <li><a href="#">Join Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+              </ul>
+            </div>
+          </nav>
+    <!--HTML Form to send data to Google sheets-->
+    <form id="survey-form" method="post" action="[https://script.google.com/a/macros/uw.edu/s/AKfycbxWhQheOvdVD18aUxU5Y6rh9prSx6ZGmKGFbSJdYaIJBmwsamjJ1rL6seOgodGG8Xln1A/exec]">
+    <script src="https://apis.google.com/js/api.js"></script>
+
+    <script>
+      // Replace this with your own Google Sheets API Key
+      const apiKey = 'AIzaSyDfcQdq71dd2cZj-oXYp3-q6E52ssY49J4';
+    
+      // Replace this with your own Google Sheet ID
+      const sheetId = '1hmAcsuYUJLB5zAOYWUIh-KErDzzIEd0dAt3rIk7JRR4';
+    
+      // Sheet range that contains the data you want to read
+      const range = 'Sheet1!A1:Z';
+    
+      // Load the Google Sheets API client library
+      function loadClient() {
+        gapi.client.setApiKey(apiKey);
+        return gapi.client
+          .load('https://sheets.googleapis.com/$discovery/rest?version=v4')
+          .then(
+            function () {
+              console.log('GAPI client loaded');
+              fetchDataAndUpdateChart();
+            },
+            function (error) {
+              console.error('Error loading GAPI client', error);
+            }
+          );
+      }
+    
+      // Fetch data from Google Sheet and update the chart
+      function fetchDataAndUpdateChart() {
+        gapi.client.sheets.spreadsheets.values
+          .get({
+            spreadsheetId: sheetId,
+            range: range,
+          })
+          .then(
+            function (response) {
+              const data = response.result.values;
+              // Process the data and update the chart here
+              // For example, you can extract the data you need and update the 'chartData' variable
+              console.log('Data from Google Sheet', data);
+            },
+            function (error) {
+              console.error('Error fetching data from Google Sheet', error);
+            }
+          );
+      }
+    
+      // Load the Google Sheets API when the page loads
+      gapi.load('client', loadClient);
+
+      function processDataAndRenderChart(data) {
+  // Assuming the first row contains the headers, and the data starts from the second row
+  const headerRow = data[0];
+  const dataRows = data.slice(1);
+
+  // Find the index of the "Name" and "Rating" columns
+  const nameIndex = headerRow.indexOf("Name");
+  const ratingIndex = headerRow.indexOf("Rating");
+
+  // Extract the names and ratings
+  const names = dataRows.map((row) => row[nameIndex]);
+  const ratings = dataRows.map((row) => parseFloat(row[ratingIndex]));
+
+  // Create the chart data object
+  const chartData = {
+    labels: names,
+    datasets: [
+      {
+        label: "Rating",
+        data: ratings,
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  // Create the bar chart
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: chartData,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 5,
+        },
+      },
+    },
+  });
+}
+
+// Update the fetchDataAndUpdateChart function to call processDataAndRenderChart
+function fetchDataAndUpdateChart() {
+  gapi.client.sheets.spreadsheets.values
+    .get({
+      spreadsheetId: sheetId,
+      range: range,
+    })
+    .then(
+      function (response) {
+        const data = response.result.values;
+        processDataAndRenderChart(data);
+      },
+      function (error) {
+        console.error('Error fetching data from Google Sheet', error);
+      }
+    );
+}
+
+
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,21 +143,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <!--NAVBAR-->
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">Computing Careers Club</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="projects.html">Projects</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="class-feedback.html">Class Feedback</a></li>
-            <li><a href="#">Join Us</a></li>
-            <li><a href="about.html">About Us</a></li>
-          </ul>
-        </div>
-      </nav>
+
 
       <h5>Tell us about your experience with your CSS/AC classes!</h5>
 
