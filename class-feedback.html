@@ -1,259 +1,149 @@
 <!DOCTYPE html>
-<html lang="en" >
-   <head>
-      <meta charset="UTF-8">
-      <title>Computing Careers Club website</title>
-      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Computing Careers Club website</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--NAVBAR-->
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">Computing Careers Club</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="projects.html">Projects</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="class-feedback.html">Class Feedback</a></li>
+            <li><a href="#">Join Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+      </nav>
 
+      <h5>Tell us about your experience with your CSS/AC classes!</h5>
 
-   </head>
-   <body>
-      <div class = "wrapper">
-      <!-- partial:index.partial.html -->
-      <!DOCTYPE html>
-      <html lang="en" >
-         <head>
-            <meta charset="UTF-8">
-                  <!--FOR NICE ICONS!-->
-
-                  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-                  <title>Home </title>
-         </head>
-         <!--NAVBAR-->
-         <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-              <div class="navbar-header">
-               <a class="navbar-brand" href="index.html">Computing Careers Club</a>
-            </div>
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="projects.html">Projects</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="class-feedback.html">Class Feedback</a></li>
-                <li><a href="#">Join Us</a></li>
-                <li><a href="about.html">About Us</a></li>
-              </ul>
-            </div>
-          </nav>
-            <!-- Starbackground -->
-            <div id='stars'></div>
-            <!-- Using DOM for verification with javascript -->
-            <script> 
-               function Validate(){
-              var txt = document.getElementById('txtUWEmail');
-              //Preventing user from leaving the email address box empty
-              if(txt.value === "" || txt.value === null){
-               alert('UW email is required');
-              }
-            }
-            </script>
-            <h5>Tell us about your experience with your CSS/AC classes!</h5>
-            
-      </html>
-<!--FEEDBACK FORM-->
-<form id="survey-form">
-   <h4 for="inputName">Name:</h4>
-   <input
-     id="inputName"
-     type="text"
-     name="name"
-     placeholder="Joe Bloggs"
-     required
-   />
-
-   <h4 for="inputEmail">UW Email:</h4>
-   <input
-     id="inputEmail"
-     type="email"
-     name="email"
-     placeholder="joe.bloggs@gmail.com"
-     required
-   />
-
-   <h4 for="inputAge">Graduation date</h4>
-   <input
-     id="inputAge"
-     name="age"
-     type="number"
-     placeholder="2025"
-     max="3000"
-     required
-   />
-
-   <h4 for="textComment"
-     >To which class would you like to provide feedback?</h4
-   >
-   <select id="selectRole" name="role" required>
-     <option disabled selected value>CSS342</option>
-     <option value="student">CSS343</option>
-     <option value="full-time-job">CSS360</option>
-     <option value="full-time-learner">CSS422</option>
-     <option value="other">CSS449</option>
-   </select>
-
-   <h4 for="inputEmail">Instructor name:</h4>
-   <input
-     id="inputProf"
-     type="prof-name"
-     name="prof-name"
-     placeholder="Minehiro Fukuda"
-     required
-   />
-
-   <h4 for="textComment">Share your thoughts about the class</h4>
-   <textarea
-     id="textComment"
-     name="comments"
-     placeholder="Please enter your comment here..."
-   ></textarea>
-
-   <fieldset name="recommend">
-      <h4 for="textComment">Are you interested in participating in CS introductory workshops? <h6>Workshops that can help you be prepared for CSS classes: Linux, C++, Assembly, etc...?</h6></h4>
- 
-      <div>
-        <input id="rdoDef" type="radio" name="recommend" value="definitely" />
-        <label for="rdoDef">Definitely</label>
- 
-        <input id="rdoMaybe" type="radio" name="recommend" value="maybe" />
-        <label for="rdoMaybe">Maybe</label>
- 
+      <!--FEEDBACK FORM-->
+      <form id="survey-form">
+        <h4 for="inputName">Name:</h4>
         <input
-          id="rdoNS"
-          type="radio"
-          name="recommend"
-          value="not-sure"
+          id="inputName"
+          type="text"
+          name="name"
+          placeholder="Joe Bloggs"
           required
         />
-        <label for="rdoNS">Not sure</label>
-      </div>
-    </fieldset>
 
-   <fieldset name="langs">
-     <h4>What languages are you interested in?</h4>
-     <div>
-       <input type="checkbox" name="langs" id="checkHTML" value="html" />
-       <label for="checkHTML">HTML</label>
+        <h4 for="inputEmail">UW Email:</h4>
+        <input
+          id="inputEmail"
+          type="email"
+          name="email"
+          placeholder="joe.bloggs@gmail.com"
+          required
+        />
 
-       <input type="checkbox" name="langs" id="checkCSS" value="css" />
-       <label for="checkCSS">CSS</label>
+        <h4 for="inputAge">Graduation date</h4>
+        <input
+          id="inputAge"
+          name="age"
+          type="number"
+          placeholder="2025"
+          max="3000"
+          required
+        />
 
-       <input type="checkbox" name="langs" id="checkJS" value="js" />
-       <label for="checkJS">JavaScript</label>
+        <h4 for="textComment"
+          >To which class would you like to provide feedback?</h4
+        >
+        <select id="selectRole" name="role" required>
+          <option disabled selected value>CSS342</option>
+          <option value="student">CSS343</option>
+          <option value="full-time-job">CSS360</option>
+          <option value="full-time-learner">CSS422</option>
+          <option value="other">CSS449</option>
+        </select>
 
-       <input type="checkbox" name="langs" id="checkPy" value="py" />
-       <label for="checkPy">Python</label>
+        <h4 for="inputProf">Instructor name:</h4>
+        <select id="inputProf" name="prof-name" required>
+          <option selected>Select a professor</option>
+          <!-- Render options dynamically from the list of professors -->
+        </select>
+        
 
-       <input type="checkbox" name="langs" id="checkPHP" value="php" />
-       <label for="checkPHP">PHP</label>
+        <h4 for="textComment">Share your thoughts about the class</h4>
+        <textarea
+          id="textComment"
+          name="comments"
+          placeholder="Please enter your comment here..."
+        ></textarea>
 
-       <input type="checkbox" name="langs" id="checkGo" value="go" />
-       <label for="checkGo">Go</label>
-
-       <input type="checkbox" name="langs" id="checkJava" value="java" />
-       <label for="checkJava">Java</label>
-
-       <input type="checkbox" name="langs" id="checkRuby" value="ruby" />
-       <label for="checkruby">Ruby</label>
-
-       <input type="checkbox" name="langs" id="checkKotlin" value="kotlin" />
-       <label for="checkKotlin">Kotlin</label>
-
-       <input type="checkbox" name="langs" id="checkRust" value="rust" />
-       <label for="checkRust">Rust</label>
-
-       <input type="checkbox" name="langs" id="checkCSharp" value="csharp" />
-       <label for="checkCSharp">C#</label>
-
-       <input type="checkbox" name="langs" id="checkCPlus" value="cplus" />
-       <label for="checkCPlus">C++</label>
-     </div>
-   </fieldset>
-
-   <fieldset>
-      <h4 for="inputFavProf">Who is the professor you have liked the most so far and why?</h4>
-      <textarea
-        id="inputFavProf"
-        name="favProf"
-        placeholder="Please provide the professor's name and the reason..."
-        required
-      ></textarea>
-   </fieldset>
-
-   <script>
-      function Validate(){
-         var txt = document.getElementById('inputEmail');
-         var re = /^[\w-]+(\.[\w-]+)*@uw.edu$/;
-         if(txt.value === "" || txt.value === null){
-            alert('UW email is required');
-         } else if (!re.test(txt.value)) {
-            alert('Please enter a valid UW email');
-         }
-      }
-   </script>
-      <button onclick="Validate()">Submit</button>
- </form>
-</div>
-
-<div id="plot"></div>
-<script>
-  // Initialize an empty array to store the data from the form
-  var feedbackData = [];
-
-  // Attach an event listener to the form to collect data on submission and update the results
-  document.getElementById("survey-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-    Validate();
-
-    var inputFavProf = document.getElementById("inputFavProf");
-    if (inputFavProf.value === "" || inputFavProf.value === null) {
-      alert("Favorite professor is required");
-    } else {
-      feedbackData.push({ professor: document.getElementById("inputProf").value, reason: inputFavProf.value });
-      inputFavProf.value = ""; // Clear the input after submitting
-      updateCountsAndChart();
-    }
-  });
-
-  // Function to update the counts and chart when new data is submitted
-  function updateCountsAndChart() {
-    // Group the data by professor name and count the number of times each professor was mentioned
-    var counts = {};
-    feedbackData.forEach(function (item) {
-      if (counts[item.professor]) {
-        counts[item.professor]++;
-      } else {
-        counts[item.professor] = 1;
-      }
-    });
-
-    // Create an array of professor names and an array of corresponding counts
-    var professors = Object.keys(counts);
-    var countsArray = [];
-    professors.forEach(function (professor) {
-      countsArray.push(counts[professor]);
-    });
-
-    // Create a bar chart of the results
-    var trace = {
-      x: professors,
-      y: countsArray,
-      type: "bar",
-    };
-    var data = [trace];
-    var layout = {
-      title: "Favorite Professors",
-      xaxis: { title: "Professor Name" },
-      yaxis: { title: "Number of Mentions" },
-    };
-    Plotly.newPlot("plot", data, layout);
-  }
-</script>
+        <!-- Rest of the form elements -->
+        <input type="submit" value="Submit" id="submit" />
+      </form>
    
-      <!-- partial -->
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js'></script>
-      <script src='https://matthew.wagerfield.com/parallax/deploy/jquery.parallax.js'></script><script  src="./script.js"></script>
-   </body>
+    </div>
+
+    <div id="plot">
+      <canvas id="myChart"></canvas>
+    </div>
+    <script>
+      // Create an array to store the list of professors
+      var professors = [
+        { id: 1, name: "Minehiro Fukuda" },
+        { id: 2, name: "Michael Stiber" },
+        { id: 3, name: "Brett Wortzman" },
+        // Add more professors as needed
+      ];
+
+      // Function to populate the professor dropdown
+      function populateProfessorDropdown() {
+        var inputProf = document.getElementById("inputProf");
+        for (var i = 0; i < professors.length; i++) {
+          var option = document.createElement("option");
+          option.value = professors[i].name;
+          option.text = professors[i].name;
+          inputProf.appendChild(option);
+        }
+      }
+
+      // Call the function to populate the professor dropdown
+      populateProfessorDropdown();
+
+      // Sample data for the bar chart
+      const chartData = {
+        labels: professors.map(prof => prof.name),
+        datasets: [
+          {
+            label: 'Rating',
+            data: [3.5, 4.2, 3.9], // Replace these values with actual ratings from your data source
+            backgroundColor: ['rgba(75, 192, 192, 0.2)'],
+            borderColor: ['rgba(75, 192, 192, 1)'],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      // Create the bar chart
+      const ctx = document.getElementById('myChart').getContext('2d');
+      const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 5,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
