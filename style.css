@@ -7,7 +7,11 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
+}
 
+.wrapper {
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .hero{
@@ -86,13 +90,16 @@ body {
   
 #survey-form {
   display: flex;
+  position: relative;
+  top: 50px;
+  width: 80%;
   flex-flow: column;
   gap: 0.5em;
 
   width: min(40em, 70vw);
   padding: 25px;
   border-radius: 1.5em;
-  margin: 0 auto;
+  margin: auto;
 
   color: rgb(0, 0, 0);
   background-color:rgb(132, 134, 134);
