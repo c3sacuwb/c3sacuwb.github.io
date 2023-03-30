@@ -1,86 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-         <!--NAVBAR-->
-         <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="#">Computing Careers Club</a>
-              </div>
-              <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="projects.html">Projects</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="class-feedback.html">Class Feedback</a></li>
-                <li><a href="#">Join Us</a></li>
-                <li><a href="about.html">About Us</a></li>
-              </ul>
-            </div>
-          </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Career Guide</h5>
-              <p class="card-text">
-                A comprehensive guide to help students navigate their careers in
-                computer science and related fields.
-              </p>
-              <a
-                href="https://css-student-advisory-council.github.io/css-career-guide/"
-                class="btn btn-primary"
-                target="_blank"
-                >Visit Project</a
-              >
-            </div>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js'></script>
+  <script src='https://matthew.wagerfield.com/parallax/deploy/jquery.parallax.js'></script><script  src="./script.js"></script>
+  
+  <style>
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 2%;
+    padding: 3%;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    columns:auto;
+  }
+  .col-md-4 {
+    margin: 0 10px;
+      flex: 1 1 30%;  
+    }
+
+    .col-md-4:hover .card {
+      transform: scale(1.05); /* add hover effect */
+    }
+    .col-md-4:hover .btn-primary {
+      transform: translateY(-10%); /* move the button up on hover */
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Computing Careers Club</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="projects.html">Projects</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="class-feedback.html">Class Feedback</a></li>
+
+        <li><a href="#">Join Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+   <!-- Starbackground -->
+   <div id='stars'></div>
+   <div id='stars2'></div>
+   <div id='stars3'></div>
+   <!-- parallax text/java -->
+   <div id="parallax">
+   <div class="layer" data-depth="0.6">
+      <!-- text -->
+      <div class="some-space">
+         <div class="container">
+               <div class = "text">
+               <center>
+               <h2>Computer Careers Club and Student Advisory Projects</h2>
+               </center>
+           </div>
+      </div>
+   </div>
+   <div class="layer" data-depth="0.4">
+      <div id="particles-js"></div>
+   </div>
+   </html>
+   <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Career Guide</h5>
+            <p class="card-text">
+              A comprehensive guide to help students navigate their careers in
+              computer science and related fields.
+            </p>
+            <a
+              href="https://css-student-advisory-council.github.io/css-career-guide/"
+              class="btn btn-primary"
+              target="_blank"
+              >Visit Project</a
+            >
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Curriculum Development</h5>
-              <p class="card-text">
-                Collaborating with faculty and students to develop and improve
-                the computer science curriculum.
-              </p>
-              <button class="btn btn-primary" disabled>
-                Coming Soon
-              </button>
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Tech Career Panel</h5>
+            <p class="card-text">
+              A panel of industry professionals sharing their experience and
+              expertise to help students make informed decisions about their
+              careers in tech.
+            </p>
+            <a
+              href="https://css-student-advisory-council.github.io/css-career-panel/"
+              class="btn btn-primary"
+              target="_blank"
+              >Visit Project</a
+            >
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Tech Career Panel</h5>
-              <p class="card-text">
-                Organizing panel discussions with professionals from various
-                technology sectors to guide students in their careers.
-              </p>
-              <button class="btn btn-primary" disabled>
-                Coming Soon
-              </button>
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Curriculum Development</h5>
+            <p class="card-text">
+              Collaborating with faculty and students to develop and improve
+              the computer science curriculum.
+            </p>
+            <button class="btn btn-primary" disabled>
+              Coming Soon
+            </button>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
