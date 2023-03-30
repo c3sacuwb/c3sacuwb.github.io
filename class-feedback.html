@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <title>Computing Careers Club website</title>
           <!--NAVBAR-->
           <nav class="navbar navbar-inverse">
@@ -20,8 +27,6 @@
           </nav>
     <!--HTML Form to send data to Google sheets-->
     <form id="survey-form" method="post" action="[https://script.google.com/a/macros/uw.edu/s/AKfycbxWhQheOvdVD18aUxU5Y6rh9prSx6ZGmKGFbSJdYaIJBmwsamjJ1rL6seOgodGG8Xln1A/exec]">
-    <script src="https://apis.google.com/js/api.js"></script>
-
     <script>
       // Replace this with your own Google Sheets API Key
       const apiKey = 'AIzaSyDfcQdq71dd2cZj-oXYp3-q6E52ssY49J4';
@@ -94,6 +99,7 @@
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
+        borderRadius: 5,
       },
     ],
   };
@@ -135,17 +141,13 @@ function fetchDataAndUpdateChart() {
 
     </script>
     
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
   </head>
   <body>
     <div class="wrapper">
 
 
-      <h5>Tell us about your experience with your CSS/AC classes!</h5>
+      <h3>Tell us about your experience with your CSS/AC classes!</h3>
 
       <!--FEEDBACK FORM-->
       <form id="survey-form">
@@ -181,7 +183,7 @@ function fetchDataAndUpdateChart() {
           >To which class would you like to provide feedback?</h4
         >
         <select id="selectRole" name="role" required>
-          <option disabled selected value>CSS342</option>
+          <option value>CSS342</option>
           <option value="student">CSS343</option>
           <option value="full-time-job">CSS360</option>
           <option value="full-time-learner">CSS422</option>
@@ -191,10 +193,8 @@ function fetchDataAndUpdateChart() {
         <h4 for="inputProf">Instructor name:</h4>
         <select id="inputProf" name="prof-name" required>
           <option selected>Select a professor</option>
-          <!-- Render options dynamically from the list of professors -->
         </select>
         
-
         <h4 for="textComment">Share your thoughts about the class</h4>
         <textarea
           id="textComment"
@@ -217,7 +217,10 @@ function fetchDataAndUpdateChart() {
         { id: 1, name: "Minehiro Fukuda" },
         { id: 2, name: "Michael Stiber" },
         { id: 3, name: "Brett Wortzman" },
+        { id: 4, name: "John Smith" },
+
         // Add more professors as needed
+        //https://www.uwb.edu/stem/faculty/css-faculty
       ];
 
       // Function to populate the professor dropdown
